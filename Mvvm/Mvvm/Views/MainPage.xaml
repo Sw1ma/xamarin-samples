@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Mvvm.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Mvvm.Views.MainPage"
+             Title="{Binding PageTitle}">
+
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="Android, iOS">10,20</On>
+        </OnPlatform>
+    </ContentPage.Padding>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Place new controls here -->
+            
+            <Label Text="{Binding Item.Id, StringFormat='id: {0}'}" 
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+
+            <Label Text="{Binding Item.ItemType, StringFormat='type: {0}'}" 
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+
+            <Label Text="{Binding Item.Title}" 
+                Style="{DynamicResource TitleStyle}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+
+            <Label Text="{Binding Item.Description}" 
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
