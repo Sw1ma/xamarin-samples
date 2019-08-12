@@ -3,7 +3,7 @@ These are samples that demonstrate how I use various Xamarin features with Xamar
 
 | Sample | Description |
 | ------ | ----------- |
-| [Mvvm Pattern](https://github.com/Sw1ma/xamarin-samples/Mvvm) | This sample demonstrates an implementation of the Model-View-ViewModel Pattern by following the [Enterprise Application Patterns](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/) using Xamarin.Forms.
+| [The Mvvm Pattern](https://github.com/Sw1ma/xamarin-samples/tree/master/Mvvm) | This sample demonstrates an implementation of the Model-View-ViewModel Pattern by following the [Enterprise Application Patterns](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/) using Xamarin.Forms.
 
 ## Releases
 N/a
