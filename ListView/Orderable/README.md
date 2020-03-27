@@ -1,6 +1,6 @@
 # Create a simple reorderable group enabled ListView
 
-<img src="../images/Screenshot_1556185495.png" width="270"> <img src="../images/Screenshot_1556185501.png" width="270">
+<img src="../../images/Screenshot_1556185495.png" width="270"> <img src="../../images/Screenshot_1556185501.png" width="270">
 
 #### Supported Platforms
 - Android
