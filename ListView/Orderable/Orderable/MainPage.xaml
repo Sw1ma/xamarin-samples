@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:OrderableListViewItems"
+             x:Class="OrderableListViewItems.MainPage">
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <!--Label Icon Style-->
+      <Style x:Key="labelIconStyle" TargetType="{x:Type Label}">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="Accent" />
+        <Setter Property="FontSize" Value="Default" />
+        <Setter Property="FontFamily" Value="{StaticResource materialIconFont}" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="Margin" Value="15,0,0,0" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Command="{Binding EditCommand}" Priority="1" Text="{Binding EditModeText}" />
+  </ContentPage.ToolbarItems>
+  
+  <!-- Place new controls here -->
+  <Grid 
+    Margin="0"
+    RowSpacing="0" 
+    ColumnSpacing="0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <ListView
+      x:Name="listView"
+      BackgroundColor="White"
+      ItemsSource="{Binding ItemsGroupedByCategory}"
+      IsGroupingEnabled="True"
+      GroupDisplayBinding="{Binding Key}"
+      SelectionMode="None"
+      HasUnevenRows="True">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid 
+              Margin="15"
+              RowSpacing="0" 
+              ColumnSpacing="0">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+              </Grid.RowDefinitions>
+              <Grid
+                Margin="0"
+                RowSpacing="0" 
+                ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <!--Index-->
+                <Label
+                  Grid.RowSpan="2"  
+                  Margin="0,0,15,0"
+                  Text="{Binding Order, StringFormat='{0:N0}'}" 
+                  TextColor="Black"
+                  FontSize="Default"
+                  FontAttributes="None" />                
+                <!--Name-->
+                <Label
+                  Grid.Column="1"
+                  Text="{Binding Name}" 
+                  TextColor="Black"
+                  FontSize="Default"
+                  FontAttributes="Bold" />
+                <!--Description-->
+                <Label 
+                  Grid.Row="1"
+                  Grid.Column="1"
+                  Text="{Binding Description}"
+                  FontSize="Small"
+                  FontAttributes="None"/>
+                <!--Order TapGestures-->
+                <Label
+                  Grid.Column="2"
+                  Text="&#xe5ce;"
+                  IsVisible="{Binding BindingContext.EditMode, Source={x:Reference listView}}"
+                  Style="{StaticResource labelIconStyle}">
+                  <Label.GestureRecognizers>
+                    <TapGestureRecognizer 
+                      NumberOfTapsRequired="1"
+                      Command="{Binding BindingContext.MoveUpCommand, Source={x:Reference listView}}" 
+                      CommandParameter="{Binding .}"/>
+                  </Label.GestureRecognizers>
+                </Label>
+                <Label
+                  Grid.Column="2"
+                  Grid.Row="1"
+                  Text="&#xe5cf;"
+                  IsVisible="{Binding BindingContext.EditMode, Source={x:Reference listView}}"
+                  Style="{StaticResource labelIconStyle}">
+                  <Label.GestureRecognizers>
+                    <TapGestureRecognizer 
+                      NumberOfTapsRequired="1"
+                      Command="{Binding BindingContext.MoveDownCommand, Source={x:Reference listView}}" 
+                      CommandParameter="{Binding .}"/>
+                  </Label.GestureRecognizers>
+                </Label>
+              </Grid>
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </Grid>
+</ContentPage>
