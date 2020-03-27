@@ -92,7 +92,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <BundleResource Include="..\..\common\Materialicons.ttf">
+    <BundleResource Include="..\..\..\common\Materialicons.ttf">
       <Link>Resources\Materialicons.ttf</Link>
     </BundleResource>
     <None Include="Entitlements.plist" />

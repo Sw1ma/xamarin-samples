@@ -62,7 +62,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="..\..\common\Materialicons.ttf">
+    <AndroidAsset Include="..\..\..\common\Materialicons.ttf">
       <Link>Assets\Materialicons.ttf</Link>
     </AndroidAsset>
     <None Include="Resources\AboutResources.txt" />
