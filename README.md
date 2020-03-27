@@ -4,6 +4,7 @@ These are samples that demonstrate how I use various Xamarin features with Xamar
 | Sample | Description |
 | ------ | ----------- |
 | [The Mvvm Pattern](https://github.com/Sw1ma/xamarin-samples/tree/master/Mvvm) | This sample demonstrates an implementation of the Model-View-ViewModel Pattern by following the [Enterprise Application Patterns](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/) using Xamarin.Forms.
+| [Reorderable ListView](https://github.com/Sw1ma/xamarin-samples/tree/master/ListView/Orderable) | Create a simple reorderable group enabled ListView |
 
 ## Releases
 N/a
